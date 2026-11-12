@@ -18,9 +18,9 @@ An end-to-end digital marketing analytics project that cleans and transforms raw
 
 
 ## Set up a Virtual Environment 
-
-code for mac       #   python3 -m venv .venv
-                   #   source .venv/bin/activate
+  
+                           python3 -m venv .venv
+                           source .venv/bin/activate
 
 ##  Install dependencies
                   #    pip install -r requirements.txt                   
