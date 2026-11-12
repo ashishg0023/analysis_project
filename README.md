@@ -1,8 +1,41 @@
 # Meta Ads Campaign Performance Analysis 📊
 
-**Python · Pandas · NumPy · Matplotlib · Seaborn · Business Intelligence**
+📌 Project Overview
+Marketing teams spend heavily across multiple Meta ad campaigns but often lack clarity on which campaigns are profitable and which are wasting budget.
 
-An end-to-end digital marketing analytics project that cleans and transforms raw Meta (Facebook) advertising data, recalculates core performance KPIs from scratch, and automates business recommendations (Continue / Pause / Discontinue).
+This project processes a dataset of global ad performance data, filters it specifically for Meta campaigns, cleans the raw metrics, engineers accurate marketing KPIs, and applies a custom Python classifier to automate budget optimization decisions.
+
+🧰 Tech Stack
+Tool                                        Purpose
+Python	                                     Core programming & data pipeline
+Pandas	                                     Data cleaning, filtering, and transformation
+NumPy	                                      Vectorized, division-safe KPI calculations
+Matplotlib & Seaborn	                       Custom data visualizations
+Excel / CSV	                                Final reporting export
+
+
+🧹 Data Cleaning & Preprocessing
+
+Real-world ad data is rarely clean. To ensure mathematically accurate analysis, the pipeline performs the following steps:
+
+Filtering: Safely isolates only Meta and Facebook platform rows, ignoring case-sensitivity and missing values.
+
+Handling Dirty Numerics: Forces all financial/performance columns (impressions, clicks, ad_spend, conversions, revenue) into numeric types.
+
+Error Coercion: Uses errors='coerce' to convert broken text strings, hidden characters, or invalid entries into NaN, which are then filled with 0 so formulas do not crash.
+
+Preventing Division-by-Zero: Uses numpy.where() to safely calculate all ratios (CTR, CPC, CPA, ROAS). If a denominator is 0, the formula returns 0 instead of throwing an error.
+
+
+🧠 Automated Campaign Classification
+The Python script includes a custom rule-based classifier (classify_campaign) that automatically tags every campaign for the marketing team based on its ROAS:
+
+## Status	Rule	Business Action:
+
+✅ Continue	             ROAS ≥ 2.5        	   Strong performer                — scale budget and increase bids.
+⚠️ Pause                	1.0 ≤ ROAS < 2.5	     Break-even / underperforming    — needs creative or audience optimization.
+❌ Discontinue	          ROAS < 1.0	           Losing money                    — cut spend immediately to prevent further losses.
+-  No Spend	             Spend = 0             Inactive campaign               — ignore during optimization.
 
 🧮 Performance Metrics & Formulas:
 
