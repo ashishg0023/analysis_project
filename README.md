@@ -27,6 +27,8 @@ An end-to-end digital marketing analytics project that cleans and transforms raw
 
 ## Run the Analysis
 nameofthefile:
+
+
       In terminal    python3 index.py
 
 
