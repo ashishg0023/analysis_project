@@ -23,13 +23,14 @@ An end-to-end digital marketing analytics project that cleans and transforms raw
                            source .venv/bin/activate
 
 ##  Install dependencies
-                  #    pip install -r requirements.txt                   
+                           pip install -r requirements.txt                   
 
 ## Run the Analysis
+from the deginated location :
 nameofthefile:
 
 
-      In terminal    python3 index.py
+                          In terminal    python3 index.py
 
 
       
